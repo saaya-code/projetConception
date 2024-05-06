@@ -17,11 +17,11 @@ const vehiculeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    owner: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+    matricule: {
+        type: String,
         required: true
     },
+    
 });
 
 module.exports = mongoose.model('Vehicule', vehiculeSchema);

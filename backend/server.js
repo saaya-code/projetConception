@@ -46,8 +46,8 @@ const checkAuthenticated = require("./middleware/checkAuthenticated");
 
 //make a router to /api 
 app.use("/auth", require("./routers/auth.routes"));
-//app.use("/api", require("./routers/main.routes"));
-app.use("/admin",checkAuthenticated, checkAdminRights, require("./routers/admin.routes"));
+app.use("/api", checkAuthenticated, require("./routers/main.routes"));
+app.use("/admin", checkAuthenticated, checkAdminRights, require("./routers/admin.routes"));
 
 
 

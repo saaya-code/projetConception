@@ -25,6 +25,16 @@ const visitSchema = new mongoose.Schema({
         ref: 'Service',
         required: true
     },
+    workshop:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Workshop',
+        required: true
+    },
+    assignedWorkers:{
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Worker',
+        default: []
+    },
     createdAt: {
         type: Date,
         default: Date.now,

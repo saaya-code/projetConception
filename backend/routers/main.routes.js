@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const Visit = require('../models/Visit');
-const Workshop = require('../models/Workshop');
-const User = require('../models/User');
-const Service = require('../models/Service');
-const Region = require('../models/Region');
 
+
+const {addVehicule, getAllVehicules, getVehicule, updateVehicule, deleteVehicule, updateVehiculeOwnerShip} = require('../controllers/vehicles');
+
+router.post("/addVehicle", addVehicule);
+router.get('/getAllUserVehicles', getAllVehicules);
+router.get('/getVehicle/:id', getVehicule);
+router.put('/updateVehicle', updateVehicule);
+router.delete('/deleteVehicle/:id', deleteVehicule);
+router.patch('/updateVehiculeOwnerShip/:id', updateVehiculeOwnerShip);
+
+module.exports = router;
