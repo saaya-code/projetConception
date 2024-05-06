@@ -11,4 +11,9 @@ router.put('/updateVehicle', updateVehicule);
 router.delete('/deleteVehicle/:id', deleteVehicule);
 router.patch('/updateVehiculeOwnerShip/:id', updateVehiculeOwnerShip);
 
+const {scheduleVisit, confirmVisit} = require('../controllers/visit');
+
+router.post("/scheduleVisit", scheduleVisit);
+router.post("/confirmVisit/:id", confirmVisit);
+
 module.exports = router;

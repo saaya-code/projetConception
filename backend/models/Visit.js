@@ -3,7 +3,13 @@ const mongoose = require('mongoose');
 const visitSchema = new mongoose.Schema({
     date: {
         type: Date,
-        required: true
+        default: Date.now,
+    },
+    time: {
+        type: {
+            start: Date,
+            end: Date
+        }
     },
     vehicule: {
         type: mongoose.Schema.Types.ObjectId,
